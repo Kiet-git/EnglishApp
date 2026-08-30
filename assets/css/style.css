@@ -1,0 +1,486 @@
+/* assets/style.css */
+:root {
+  --primary-color: #4a90e2; /* Xanh dương hiện đại */
+  --secondary-color: #f5f6fa; /* Màu nền xám nhẹ */
+  --text-color: #2f3640;
+  --danger-color: #e74c3c;
+  --success-color: #2ecc71;
+  --white: #ffffff;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  background: white;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+/* --- Layout Chung --- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  min-height: 80vh;
+}
+
+/* --- Navigation Bar --- */
+nav {
+  background: var(--primary-color);
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+nav .nav-content {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+nav a:hover {
+  opacity: 0.8;
+}
+.right-nav {
+  font-size: 0.9rem;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--primary-color);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #357abd;
+}
+.btn-danger {
+  background: var(--danger-color);
+}
+
+.btn-success {
+  background: var(--success-color);
+}
+
+.btn-warning {
+  background-color: #f39c12; /* Màu cam */
+  color: white;
+}
+.btn-warning:hover {
+  background-color: #e67e22;
+}
+/* --- Forms (Login/Register/Input) --- */
+input[type="text"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0 20px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+input:focus {
+  outline: 2px solid var(--primary-color);
+  border-color: transparent;
+}
+
+/* --- Auth Pages (Login/Register Riêng) --- */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full màn hình */
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+}
+.auth-box {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+.auth-box h2 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+.auth-footer {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+/* --- index.php Grid Chủ đề (Topic) --- */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+.topic-card {
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s;
+  border: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+.topic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+.topic-card h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+}
+
+/* --- homepage and animations --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.btn,
+button,
+a {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-color, #3498db);
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+  outline: none;
+}
+
+table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+table tbody tr:hover {
+  background-color: #f1f7ff;
+  cursor: default;
+}
+
+.hero-section {
+  width: 100%;
+  min-height: 94vh;
+  background-image:
+    linear-gradient(rgba(238, 245, 255, 0.9), rgba(238, 247, 255, 0.9)),
+    url("../images/bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-orange {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  border: 2px solid var(--primary-color);
+}
+
+.btn-orange:hover {
+  transform: translateY(-2px);
+  background-color: #1b89e4;
+  color: white;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+  transform: translateY(-2px);
+  background-color: #7fc8ff91;
+}
+
+.search-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: white;
+  padding: 10px;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  position: relative;
+  z-index: 10;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 50px;
+  outline: none;
+}
+
+.search-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-btn:hover {
+  background: #2980b9;
+}
+
+.features-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  color: #7f8c8d;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 20px;
+}
+
+.feature-card {
+  background: #fff;
+  border: 1px solid #3498db;
+  border-radius: 10px;
+  padding: 25px;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(52, 152, 219, 0.15);
+}
+
+.feature-title {
+  color: #2980b9;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-list li {
+  margin-bottom: 10px;
+  color: #34495e;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.feature-list li i {
+  color: #3498db;
+  margin-top: 4px;
+}
+
+.topics-section {
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Table (Admin) --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+th,
+td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+th {
+  background-color: var(--primary-color);
+  color: white;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* quiz.php */
+.quiz-item {
+  background: #fff;
+  padding: 20px;
+  border-left: 5px solid var(--primary-color);
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+.quiz-item label {
+  display: block;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+/*TOOL VIP CSS*/
+.file-label {
+  margin-bottom: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  color: #333;
+}
+
+/* Ẩn input gốc */
+.file-label input[type="file"] {
+  display: none;
+}
+
+.file-btn {
+  padding: 8px 14px;
+  background: #4f46e5; /* tím xanh nhẹ */
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.file-btn:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+.file-btn:active {
+  transform: scale(0.97);
+}
